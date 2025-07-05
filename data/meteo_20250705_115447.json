@@ -1,0 +1,45 @@
+{
+    "coord": {
+        "lon": 47.5361,
+        "lat": -18.9137
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 16.98,
+        "feels_like": 16.48,
+        "temp_min": 16.98,
+        "temp_max": 16.98,
+        "pressure": 1022,
+        "humidity": 67,
+        "sea_level": 1022,
+        "grnd_level": 884
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.63,
+        "deg": 120
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1751704807,
+    "sys": {
+        "type": 1,
+        "id": 2136,
+        "country": "MG",
+        "sunrise": 1751685810,
+        "sunset": 1751725500
+    },
+    "timezone": 10800,
+    "id": 1070940,
+    "name": "Antananarivo",
+    "cod": 200
+}

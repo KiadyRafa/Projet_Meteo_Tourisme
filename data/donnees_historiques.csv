@@ -1,0 +1,6 @@
+city,date,temperature,humidity,wind_speed,weather
+Antananarivo,2023-01-15,24.5,65,3.4,Clear
+Antananarivo,2023-02-15,25.3,67,2.8,Clouds
+Antananarivo,2023-03-15,23.8,70,3.2,Rain
+Antananarivo,2023-04-15,22.1,68,2.5,Clear
+Antananarivo,2023-05-15,20.2,72,1.8,Rain
