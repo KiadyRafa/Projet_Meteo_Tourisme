@@ -19,7 +19,7 @@ def extract_data():
         with open(file_name, "w") as f:
             json.dump(data, f, indent=4)
 
-        print(f"[✔] Données météo extraites et enregistrées dans {file_name}")
+        print(f"[✔] Données météo extraites : {file_name}")
     except Exception as e:
         print(f"[❌] Erreur durant l'extraction : {e}")
         raise e

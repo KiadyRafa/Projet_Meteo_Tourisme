@@ -1,11 +1,12 @@
 import json
 import os
 import pandas as pd
+from datetime import datetime
 
 def transform_data():
     try:
         os.makedirs("data", exist_ok=True)
-        # Ne garder que les fichiers JSON météo
+
         json_files = sorted([
             f for f in os.listdir("data")
             if f.startswith("meteo_") and f.endswith(".json")
@@ -18,18 +19,24 @@ def transform_data():
             data = json.load(f)
 
         row = {
-            "city": data["name"],
-            "datetime": pd.to_datetime("now"),
+            "city": data.get("name", "Unknown"),
+            "datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "temperature": data["main"]["temp"],
             "humidity": data["main"]["humidity"],
             "wind_speed": data["wind"]["speed"],
             "weather": data["weather"][0]["main"]
         }
 
-        df = pd.DataFrame([row])
-        df.to_csv("data/meteo_clean.csv", index=False)
+        # ✅ Append au lieu d'écraser
+        final_file = "data/donnees_finales.csv"
+        if os.path.exists(final_file):
+            df = pd.read_csv(final_file)
+            df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
+        else:
+            df = pd.DataFrame([row])
 
-        print(f"[✔] Données transformées à partir de {latest_file} et enregistrées dans meteo_clean.csv")
+        df.to_csv(final_file, index=False)
+        print(f"[✔] Données transformées et ajoutées à {final_file}")
 
     except Exception as e:
         print(f"[❌] Erreur durant la transformation : {e}")
