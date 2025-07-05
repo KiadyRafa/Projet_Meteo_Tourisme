@@ -11,5 +11,5 @@ def load_data():
         print(f"[✔] Données prêtes pour le dashboard Looker Studio :")
         print(df.head())
     except Exception as e:
-        print(f"[❌] Erreur durant le chargement : {e}")
+        print(f" Erreur durant le chargement : {e}")
         raise e

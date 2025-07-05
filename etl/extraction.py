@@ -21,5 +21,5 @@ def extract_data():
 
         print(f"[✔] Données météo extraites : {file_name}")
     except Exception as e:
-        print(f"[❌] Erreur durant l'extraction : {e}")
+        print(f" Erreur durant l'extraction : {e}")
         raise e

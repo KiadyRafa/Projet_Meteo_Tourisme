@@ -27,7 +27,7 @@ def transform_data():
             "weather": data["weather"][0]["main"]
         }
 
-        # ✅ Append au lieu d'écraser
+        
         final_file = "data/donnees_finales.csv"
         if os.path.exists(final_file):
             df = pd.read_csv(final_file)
@@ -39,5 +39,5 @@ def transform_data():
         print(f"[✔] Données transformées et ajoutées à {final_file}")
 
     except Exception as e:
-        print(f"[❌] Erreur durant la transformation : {e}")
+        print(f" Erreur durant la transformation : {e}")
         raise e
